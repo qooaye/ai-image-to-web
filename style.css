@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* 紅色宣傳橫幅 */
+.promo-banner {
+    background: linear-gradient(135deg, #ff4444 0%, #ff6666 100%);
+    color: white;
+    padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(-50px) translateY(-50px); }
+}
+
+.banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.left-section {
+    flex: 1;
+}
+
+.main-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.promo-text {
+    margin-bottom: 30px;
+}
+
+.limited-time {
+    background: rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.order-now {
+    background: rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+.offer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.buy-text, .get-text {
+    font-size: 32px;
+}
+
+.number {
+    background: white;
+    color: #ff4444;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.number-large {
+    background: white;
+    color: #ff4444;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.center-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-container {
+    text-align: center;
+}
+
+.product-image {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.product-label {
+    background: rgba(255,255,255,0.9);
+    color: #ff4444;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.right-section {
+    flex: 1;
+    text-align: right;
+}
+
+.quality-badge {
+    background: rgba(255,255,255,0.2);
+    border: 2px solid white;
+    border-radius: 50px;
+    padding: 15px 25px;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.quality-text {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.guarantee {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.feature {
+    background: rgba(255,255,255,0.2);
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 主要內容區域 */
+.main-content {
+    padding: 60px 20px;
+}
+
+.recipe-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #ff4444;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.recipe-label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #ff4444;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* 為每個卡片設定不同的圖片顯示位置 */
+#recipe-1 .recipe-image {
+    object-position: 12.5% 50%; /* 顯示第一個產品 (原味雙椒醬) */
+    transform: scale(1.2); /* 稍微放大以更好顯示產品 */
+}
+
+#recipe-2 .recipe-image {
+    object-position: 37.5% 50%; /* 顯示第二個產品 (泰式檸檬雙椒醬) */
+    transform: scale(1.2);
+}
+
+#recipe-3 .recipe-image {
+    object-position: 62.5% 50%; /* 顯示第三個產品 (雙椒炸醬) */
+    transform: scale(1.2);
+}
+
+#recipe-4 .recipe-image {
+    object-position: 87.5% 50%; /* 顯示第四個產品 (花椒泡菜辣筍) */
+    transform: scale(1.2);
+}
+
+.recipe-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 20px 10px 20px;
+}
+
+.recipe-description {
+    color: #666;
+    margin: 0 20px 20px 20px;
+    font-size: 14px;
+}
+
+.recipe-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #ff4444;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.recipe-button:hover {
+    background: #ff6666;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .banner-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .main-title {
+        font-size: 36px;
+    }
+    
+    .offer {
+        justify-content: center;
+    }
+    
+    .right-section {
+        text-align: center;
+    }
+    
+    .features {
+        align-items: center;
+    }
+    
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 28px;
+    }
+    
+    .offer {
+        font-size: 24px;
+    }
+    
+    .number {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    .number-large {
+        width: 60px;
+        height: 60px;
+        font-size: 36px;
+    }
+}
